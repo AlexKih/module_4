@@ -22,3 +22,11 @@ font-weight: bold;
 font-size:22pt;
 font-family: Arial;
 }
+
+p.paragraph-4 {
+font-style: italic;
+text-align: center;
+font-size: 24px;
+color: green;
+text-shadow: 2px 2px 2px green;
+}
