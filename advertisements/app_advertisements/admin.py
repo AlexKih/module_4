@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Advertisement
 
 class AdvertisementAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'description', 'created_date', 'updated_at', 'auction']
+    list_display = ['id', 'title', 'description', 'created_date', 'updated_date', 'auction', 'user', 'image']
     list_filter = ['auction', 'created_at']
 
     actions = ['make_auction_as_false', 'make_auction_as_true']
@@ -15,8 +15,9 @@ class AdvertisementAdmin(admin.ModelAdmin):
     def make_auction_as_true(self, request, qyueryset):
         qyueryset.update(auction=True)
 
+
     fieldsets = (
-        ('Общее', {'fields': ('title', 'description')}),
+        ('Общее', {'fields': ('title', 'description', 'user', 'image')}),
         ('Финансы', {'fields': ('price', 'auction'), 'classes': ['collapse']})
     )
 
